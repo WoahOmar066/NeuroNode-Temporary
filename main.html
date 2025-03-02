@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroNode Labs</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<style>
+    #regcta {
+        border: 2px solid #8a53fc;
+        box-shadow: none;
+    }
+    #regcta:hover {
+        background-color: #212121;
+        color: #c0ff72;
+        opacity: 1;
+        border: 2px solid #c0ff72;
+        filter: brightness(1);
+    }
+</style>
+<body>
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-container">
+                <a href="main.html"><div class="logo"><img src="logo.png" alt="NeuroNode"></div></a>
+                <ul class="nav-links">
+                    <li><a href="hallmarks.html">Features</a></li>
+                    <li><a href="investment.html">Invest</a></li>
+                    <li><a href="processing.html">Processing - VPaaT</a></li>
+                    <li><a href="#comparison">Compare</a></li>
+                    <li><a href="hallmarks.html#ai">Hestia - AI</a></li>
+                    <li><a href="/investment" id="regcta" class="cta-button">Request Demo</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            </div>
+        </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>NeuroNode Labs – The Future of Cloud Development</h1>
+        <p>Cloud Processing, AI Assistants, Snippet Market & Developer Tools – All Seamlessly Integrated.</p>
+        <div class="hero-buttons">
+            <a href="investment.html" class="btn">Request Demo</a>
+            <a href="hallmarks.html" class="btn secondary">Explore Features</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Why NeuroNode Labs?</h2>
+        <p class="fp">See our four biggest selling point, and their examples.</p>
+        <div class="features-container">
+
+            <a href="hallmarks.html#market">
+                <div class="feature">
+                    <img src="static/images/main/feature1.png" alt="Snippets Market">
+                    <h3>Snippets Market</h3>
+                    <p>Access, save, and reuse pre-built code snippets across projects. 
+                    Easily insert them into your workflow, reducing repetitive coding and improving efficiency.</p>
+                </div>
+            </a>
+
+            <a href="hallmarks.html#ai">
+                <div class="feature">
+                    <img src="static/images/main/feature2.png" alt="AI Assistants">
+                    <h3>Hestia: The Ultimate Assitant</h3>
+                    <p>Get real-time AI-powered suggestions, bug fixes, and code optimizations. 
+                    Work smarter with AI that understands your code and helps improve performance.</p>
+                </div>
+            </a>
+
+            <a href="hallmarks.html#vpaatf">
+                <div class="feature">
+                    <img src="static/images/main/feature3.png" alt="Cloud Processing">
+                    <h3>Cloud Processing (VPaaT)</h3>
+                    <p>Instantly allocate CPU, GPU, or TPU resources within your code. 
+                    No instance management—just seamless, scalable performance that adapts to your needs.</p>
+                </div>
+            </a>
+
+            <a href="hallmarks.html#dev-tools">
+                <div class="feature">
+                    <img src="static/images/main/feature4.png" alt="Developer Tools">
+                    <h3>Developer Tools</h3>
+                    <p>Includes built-in debugging, Git integration, Webview, AI-powered debugging, 
+                    and networking tools—all within one seamless platform.</p>
+                </div>
+            </a>
+        </div>
+
+        <a href="hallmarks.html"><button class="btnjd">See Each In Detail</button></a>
+    </section>
+
+    <!-- VPaaT Explanation Section -->
+    <section id="vpaat">
+        <h2>What is Virtual Processing as a Tool (VPaaT)?</h2>
+        <p>
+            VPaaT (Virtual Processing as a Tool) redefines cloud computing by allowing developers to dynamically assign 
+            CPU, GPU, or TPU power directly within their code—eliminating the need to manage cloud instances manually.
+        </p>
+
+        <div class="vpaat-benefits">
+            <div class="benefit">
+                <h3>Dynamic Scaling</h3>
+                <p>Resources adjust automatically based on demand—no need to manually scale instances.</p>
+            </div>
+            <div class="benefit">
+                <h3>Code-First Approach</h3>
+                <p>Assign cloud power as a <strong>variable</strong> in your code—no complex configurations needed.</p>
+            </div>
+            <div class="benefit">
+                <h3>Zero Setup Time</h3>
+                <p>Skip the headache of provisioning virtual machines. Run code instantly with optimized resources.</p>
+            </div>
+            <div class="benefit">
+                <h3>Cost-Effective</h3>
+                <p>Only pay for the <strong>exact</strong> processing power used—no over-provisioning or wasted resources.</p>
+            </div>
+        </div>
+
+        <div class="code-snippet">
+            <pre>
+                <code>
+    <div class="comment"># Instantly allocate an 8-core GPU in code</div>
+    processor = NeuroNode.GPU_8v  
+    result = processor.run(my_function)
+                </code>
+            </pre>
+        </div>
+
+        <a href="processing.html" id="procs" class="btn">Explore Processing</a>
+    </section>
+
+    <section id="hestia">
+        <div class="hestia-container">
+            <h2 style="text-align: left;"><span style="color: #94ff6f; font-style: italic;">Hestia</span> - The Next-Gen AI Development Assistant</h2>
+            <p>
+                Unlike traditional AI code assistants that only generate code, 
+                <span style="color: #94ff6f; font-style: italic;">Hestia</span> goes beyond by actively interacting with your 
+                Integrated Development Environment (IDE). <span style="color: #94ff6f; font-style: italic;">Hestia</span> doesn't just suggest code; 
+                it can execute commands, manage files, debug in real-time, and automate workflows. By leveraging full IDE integration, 
+            <ul>
+                <li><strong>IDE Command Execution</strong> – Open, edit, and manage project files within your environment.</li>
+                <li><strong>Real-Time Debugging</strong> – Identify, explain, and fix errors without leaving your IDE.</li>
+                <li><strong>Automated Refactoring</strong> – Optimize and restructure code instantly.</li>
+                <li><strong>Full IDE Navigation</strong> – Search, jump between files, and manage dependencies with ease.</li>
+                <li><strong>Intelligent Code Execution</strong> – Run scripts, analyze outputs, and suggest improvements dynamically.</li>
+            </ul>
+            <p>
+                <span style="color: #94ff6f; font-style: italic;">Hestia</span> transforms your development process by automating repetitive tasks and 
+                giving you a fully interactive AI assistant that thinks, acts, and improves
+                your workflow like never before.
+            </p>
+    
+            <!-- Buttons -->
+            <div class="hestia-buttons">
+                <a href="hallmarks.html#ai" class="btn">Explore NeuroNode's AI</a>
+                <a href="hallmarks.html" class="btn secondary">See Others Features</a>
+            </div>
+        </div>
+    </section>        
+
+    <!-- Comparison Table Section -->
+    <section id="comparison">
+        <h2>How Does NeuroNode Labs Compare?</h2>
+        <p>NeuroNode Labs vs Traditional Cloud Platforms – See the Difference.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>NeuroNode Labs</th>
+                        <th>Google Cloud (GCP)</th>
+                        <th>Microsoft Azure</th>
+                        <th>AWS Lambda</th>
+                        <th>GitHub Codespaces</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dynamic Processing Allocation (VPaaT)</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Pay Only for Processing Power Used</td>
+                        <td>✅ Yes</td>
+                        <td>⚠️ Partial</td>
+                        <td>⚠️ Partial</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Integrated AI Coding Assistant</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Built-in Snippets Marketplace</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Real-Time Collaboration</td>
+                        <td>✅ Yes</td>
+                        <td>⚠️ Requires Setup</td>
+                        <td>⚠️ Requires Setup</td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Fully Managed Environment</td>
+                        <td>✅ Yes</td>
+                        <td>⚠️ Partial</td>
+                        <td>⚠️ Partial</td>
+                        <td>✅ Yes</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Auto-Scaling Without Configurations</td>
+                        <td>✅ Yes</td>
+                        <td>⚠️ Requires Setup</td>
+                        <td>⚠️ Requires Setup</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td>Best for AI/ML Workloads</td>
+                        <td>✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="margin-top: 35px; font-size: 20px; text-align: left;"><strong style="text-decoration: underline; font-weight: 900;">So that's it!</strong> There is no fully integrated development enviroment out there—which brings together, and integrates all of these functionalities.</p>
+    </section>
+
+    <section id="final-section">
+        <div class="container">
+          <h2>Join the Future of Cloud Computing</h2>
+          <p>
+            Experience the unparalleled efficiency and innovation of NeuroNode, where cutting-edge technology meets a developer-first approach. Our platform revolutionizes cloud computing with seamless resource allocation, AI-driven tools, and an intuitive interface designed for modern creators.
+          </p>
+          <p>
+            Invest in the future today and become part of the next wave of digital transformation. With NeuroNode, you're not just adopting a service—you're joining a movement that puts creativity, efficiency, and performance at the forefront.
+          </p>
+          <a href="investment.html" id="bti">Invest Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+      <!-- About Column -->
+      <div class="footer-column about">
+        <h3>About NeuroNode</h3>
+        <p>NeuroNode is revolutionizing cloud development with AI, dynamic processing, and cutting-edge developer tools. Join the future of technology with us.</p>
+      </div>
+      <!-- Quick Links Column -->
+      <div class="footer-column links" style="margin-left: 130px;">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="hallmarks.html">Features</a></li>
+          <li><a href="investment.html">Invest</a></li>
+          <li><a href="processing.html">Processing - VPaaT</a></li>
+          <li><a href="#comparison">Compare</a></li>
+          <li><a href="hallmarks.html#ai">Hestia - AI</a></li>
+          <li><a href="investment.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Column -->
+      <div class="footer-column contact">
+        <h3>Contact Us</h3>
+        <p>Email: random@random.com</p>
+        <p>Phone: +1 (234) 567-8910</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NeuroNode, All rights reserved.</p>
+    </div>
+  </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".sidebar").classList.toggle("active");
+        }
+
+        let ctrlDPressed = false;
+        let timer;
+
+        document.addEventListener("keydown", function(event) {
+            // Detect Ctrl + D
+            if (event.ctrlKey && event.key.toLowerCase() === "d") {
+                event.preventDefault(); // Prevent default bookmark action
+
+                // Start 10-second window
+                ctrlDPressed = true;
+                clearTimeout(timer); // Reset timer if pressed again
+
+                // After 10 seconds, reset if no Ctrl + Q is pressed
+                timer = setTimeout(() => {
+                    ctrlDPressed = false;
+                }, 10000);
+            }
+
+            // Detect Ctrl + Q (only works if Ctrl + D was pressed first)
+            if (ctrlDPressed && event.ctrlKey && event.key.toLowerCase() === "q") {
+                event.preventDefault();
+                window.location.href = "/home"; // Redirect to /home
+            }
+        });
+    </script>
+</body>
+</html>

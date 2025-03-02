@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing - NeuroNode</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+    <script src="{{ url_for('static', filename='js/screen_detector.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<style>
+    
+/* Slider Container */
+.slider-group {
+    margin: 20px auto;
+    width: 900px;
+    text-align: center;
+}
+
+/* Label Styling */
+.slider-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #c0ff72;
+    margin-bottom: 10px;
+}
+
+/* Custom Slider Styles */
+.slider-group input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #444;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+/* Thumb (handle) Styling */
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #c0ff72;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Thumb Hover Effect */
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+    background: #ffffff;
+    transform: scale(1.2);
+}
+
+/* Mozilla Firefox Slider Styling */
+.slider-group input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #c0ff72;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slider-group input[type="range"]::-moz-range-thumb:hover {
+    background: #ffffff;
+    transform: scale(1.2);
+}
+</style>
+<body>
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-container">
+                <a href="main.html"><div class="logo"><img src="logo.png" alt="NeuroNode"></div></a>
+                <ul class="nav-links">
+                    <li><a href="/features">Features</a></li>
+                    <li><a href="/investment">Invest</a></li>
+                    <li><a href="/processing">Processing - VPaaT</a></li>
+                    <li><a href="/#comparison" class="active">Compare</a></li>
+                    <li><a href="https://neuronode-hestia.ai/">Hestia - AI</a></li>
+                    <li><a href="/investment" id="regcta" class="cta-button">Request Demo</a></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            </div>
+        </nav>
+
+    <!-- Processing Hero Section -->
+    <header class="hero">
+        <h1>Experience Blazing-Fast Cloud Processing</h1>
+        <p>Unlock the power of VPaaT to dynamically allocate compute resources for AI, rendering, and high-performance workloads.</p>
+        <a href="/features" class="btn">See Other Features</a>
+    </header>
+
+    <!-- Processing Features Section -->
+    <section id="processing-features">
+        <h2>Why Choose NeuroNode Processing?</h2>
+        <div class="features-container">
+            <div class="feature">
+                <img src="static/images/main/feature1.png" alt="Scalable Computing">
+                <h3>Scalable Computing</h3>
+                <p>Scale CPU, GPU, and TPU resources in real-time without manual provisioning.</p>
+            </div>
+            <div class="feature">
+                <img src="static/images/main/feature2.png" alt="AI-Powered Optimization">
+                <h3>AI-Powered Optimization</h3>
+                <p>Automatically fine-tune processing power based on workload demands.</p>
+            </div>
+            <div class="feature">
+                <img src="static/images/main/feature3.png" alt="Cost-Efficient">
+                <h3>Cost-Efficient</h3>
+                <p>Pay only for the exact processing power you use, no over-provisioning.</p>
+            </div>
+        </div>
+        <p style="max-width: 1000px; margin: 0 auto; text-align: left; margin-top: 35px;">
+            NeuroNode Processing revolutionizes cloud computing by eliminating the complexities of manual resource allocation. With our cutting-edge Virtual Processing as a Tool (VPaaT) framework, developers can seamlessly request and scale CPU, GPU, or TPU power within their code. Unlike traditional cloud platforms that require instance setup and complex configurations, VPaaT dynamically adjusts resources based on workload demands, ensuring optimal efficiency and cost-effectiveness. <br><br>By leveraging NeuroNode’s AI-powered optimization, users benefit from intelligent workload distribution that minimizes latency and maximizes computational power. Whether you're training deep learning models, processing massive datasets, or running high-performance simulations, NeuroNode ensures that you always have the right resources at the right time—without unnecessary overhead or wasted compute power.
+        </p>
+    </section>
+
+    <!-- Traditional vs VPaaT Comparison Section -->
+<section id="comparison-section">
+    <h2>Traditional Cloud vs. VPaaT</h2>
+    <p>Understanding how VPaaT transforms cloud computing requires examining the fundamental differences between traditional approaches and NeuroNode's innovative model.</p>
+    
+    <div class="comparison-container">
+        <div class="comparison-column traditional">
+            <h3>Traditional Cloud Platforms</h3>
+            <div class="comparison-item">
+                <h4>Resource Allocation</h4>
+                <p>Manual provisioning of virtual machines or containers with predetermined specifications. Resources are often over-provisioned to handle peak loads.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Setup Time</h4>
+                <p>Complex configuration process requiring multiple steps: instance selection, network setup, security groups, and storage configuration.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Cost Structure</h4>
+                <p>Pay-per-hour or minute for allocated resources regardless of actual usage. Idle resources still incur charges.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Scaling</h4>
+                <p>Requires manual intervention or complex auto-scaling rules based on predefined metrics with significant lag time.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Developer Experience</h4>
+                <p>Constant context switching between code and infrastructure management interfaces. Significant DevOps knowledge required.</p>
+            </div>
+        </div>
+        
+        <div class="comparison-column vpaatstack">
+            <h3>NeuroNode VPaaT</h3>
+            <div class="comparison-item">
+                <h4>Resource Allocation</h4>
+                <p>Dynamic allocation directly within code. Resources automatically match exact workload requirements with precise scaling.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Setup Time</h4>
+                <p>Zero configuration needed. Resources are available instantly with a single line of code, eliminating infrastructure management.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Cost Structure</h4>
+                <p>True pay-per-use based on exact CPU cycles, GPU execution time, and memory consumption. No charges for idle resources.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Scaling</h4>
+                <p>Real-time automatic scaling based on workload demands. No configuration or monitoring required for optimal resource utilization.</p>
+            </div>
+            <div class="comparison-item">
+                <h4>Developer Experience</h4>
+                <p>Seamless integration with development workflow. Processing power becomes just another function call, eliminating infrastructure concerns.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="code-comparison">
+        <div class="code-block">
+            <h4>Traditional Cloud Implementation</h4>
+            <pre><code style="color: white;">
+# 1. Log into cloud console
+# 2. Navigate to instance creation
+# 3. Select instance type (e.g., p3.2xlarge)
+# 4. Configure security groups
+# 5. Set up storage volumes
+# 6. Launch and wait for provisioning
+# 7. SSH into instance
+# 8. Install dependencies
+# 9. Upload code
+# 10. Finally run your workload
+            </code></pre>
+        </div>
+        <div class="code-block">
+            <h4>NeuroNode VPaaT Implementation</h4>
+            <pre><code>
+<span style="color: white;"># Simply declare in your code</span>
+processor = NeuroNode.GPU_8v
+result = processor.run(my_function)
+
+<span style="color: white;"># That's it - no infrastructure management</span>
+            </code></pre>
+        </div>
+    </div>
+</section>
+
+<style>
+#comparison-section {
+    padding: 80px 5%;
+    background-color: #1d1d1d;
+    text-align: center;
+    color: #ffffff;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+#comparison-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #c0ff72;
+}
+
+#comparison-section p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.comparison-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+}
+
+.comparison-column.traditional {
+    border-top: 4px solid #ff7272;
+}
+
+.comparison-column.vpaatstack {
+    border-top: 4px solid #c0ff72;
+}
+
+.comparison-column h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-column.traditional h3 {
+    color: #ff7272;
+}
+
+.comparison-column.vpaatstack h3 {
+    color: #c0ff72;
+}
+
+.comparison-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-item:last-child {
+    border-bottom: none;
+}
+
+.comparison-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.comparison-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.code-comparison {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.code-block {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.code-block h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.code-block pre {
+    background-color: #232323;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: monospace;
+    color: #c0ff72;
+    white-space: pre;
+}
+
+@media (max-width: 768px) {
+    .comparison-container, .code-comparison {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .comparison-column, .code-block {
+        width: 100%;
+    }
+}
+</style>
+
+    <!-- Interactive Processing Demo -->
+    <section id="processing-demo">
+        <h2>Try VPaaT in Action</h2>
+        <p>Adjust the sliders to allocate resources and see how VPaaT adapts dynamically.</p>
+        <div class="slider-group">
+            <label for="cpu-slider">CPU Cores: <span id="cpu-value">4</span></label>
+            <input type="range" id="cpu-slider" min="1" max="64" value="4" oninput="updateResource('cpu')">
+        </div>
+        <div class="slider-group">
+            <label for="gpu-slider">GPU Cores: <span id="gpu-value">128</span></label>
+            <input type="range" id="gpu-slider" min="64" max="4096" value="128" oninput="updateResource('gpu')">
+        </div>
+        <div class="slider-group">
+            <label for="ram-slider">RAM (GB): <span id="ram-value">16</span></label>
+            <input type="range" id="ram-slider" min="4" max="256" value="16" oninput="updateResource('ram')">
+        </div>
+        <p><strong>Estimated Cost:</strong> $<span id="cost-estimate">0.50</span> per hour</p>
+    </section>
+
+    <!-- VPaaT Deep Dive Section -->
+    <section id="vpaat-deep-dive">
+        <div class="vpaat-container">
+            <h2 class="collapsible-title" onclick="toggleDeepDive()">
+                Virtual Processing as a Tool (VPaaT): A Deep Dive into Dynamic Cloud Processing
+                <span class="caret">&#9656;</span> <!-- Caret icon -->
+            </h2>
+
+        <div class="vpaat-content" id="vpaat-content">
+            <h3>The Core Concept of VPaaT</h3>
+            <p>
+                Virtual Processing as a Tool (<strong>VPaaT</strong>) is a paradigm shift in cloud computing, designed to eliminate the traditional complexities of provisioning and managing compute resources. Instead of requiring developers to manually set up and configure virtual machines (VMs) or serverless functions, VPaaT allows <strong>on-demand allocation of CPU, GPU, and TPU resources directly within application code</strong>. 
+                This means a developer can call for additional processing power dynamically, without needing to worry about instance scaling, load balancing, or resource over-provisioning. Unlike traditional cloud environments where users must estimate and reserve resources beforehand, VPaaT offers a <strong>code-first approach to cloud computing</strong>, allowing resources to scale in real-time based on workload demands.
+            </p>
+
+            <h3>Dynamic Resource Allocation & Scaling</h3>
+            <p>
+                VPaaT operates on a <strong>real-time allocation model</strong>, meaning compute resources are not statically assigned but instead <strong>scaled up or down based on real-time demand</strong>. This is particularly beneficial for workloads that experience fluctuating compute needs, such as <strong>AI model training, large-scale data processing, financial modeling, and video rendering</strong>. 
+                Traditional cloud platforms require developers to configure auto-scaling rules, monitor performance metrics, and predict resource requirements ahead of time. With VPaaT, these constraints are removed. The system uses <strong>intelligent load detection and workload profiling</strong> to allocate the precise number of CPU cores, GPU processing units, and memory needed at any given moment.
+            </p>
+
+            <h3>Seamless Code Integration and API Usage</h3>
+            <p>
+                One of the defining features of VPaaT is its seamless integration within application workflows. Instead of navigating a cloud provider’s complex instance management UI, VPaaT allows developers to define their compute needs in <strong>a single line of code</strong>. 
+            </p>
+            <pre>
+                <code>
+    
+    <span style="color: white;"># Allocate processing power dynamically</span>
+    processor = NeuroNode.GPU_8v
+    result = processor.run(my_function)
+                </code>
+            </pre>
+            <p>
+                The VPaaT system automatically provisions the necessary resources and executes the task without requiring additional setup. This <strong>programmatic resource allocation</strong> extends to any cloud-based workload, allowing developers to execute <strong>batch jobs, high-performance computing (HPC) tasks, and large-scale AI inferencing</strong> without managing backend configurations.
+            </p>
+
+            <h3>Cost Efficiency & Usage-Based Billing</h3>
+            <p>
+                One of the biggest pain points in traditional cloud computing is <strong>cost inefficiency</strong>. Many cloud users pay for compute power they don’t fully utilize because resources are allocated <strong>per instance, per hour</strong>, rather than <strong>per computation cycle</strong>. VPaaT changes this model by implementing a <strong>precise usage-based billing system</strong>, where costs are calculated based on <strong>exact CPU cycles, GPU execution time, and memory consumption</strong>.
+            </p>
+            <p>
+                This makes VPaaT significantly more <strong>cost-effective</strong> than traditional cloud platforms, especially for <strong>short-lived, burstable workloads</strong> that don’t need persistent compute instances.
+            </p>
+
+            <h3>Security, Fault Tolerance, and Future Scalability</h3>
+            <p>
+                Beyond performance and cost, VPaaT is designed with <strong>robust security and fault-tolerance mechanisms</strong> to ensure <strong>high availability and data protection</strong>. Each VPaaT execution runs in <strong>isolated compute sandboxes</strong>, preventing data leakage or cross-instance interference. 
+                The system also features <strong>automatic failover and retry mechanisms</strong>, ensuring that workloads can be reallocated to alternative compute nodes in case of hardware failures.
+            </p>
+            <p>
+                Looking ahead, VPaaT represents <strong>the next evolution of cloud computing</strong>, pushing towards <strong>serverless high-performance computing (HPC)</strong>. As workloads become more <strong>demanding and distributed</strong>, VPaaT’s model of <strong>on-the-fly compute provisioning</strong> will pave the way for <strong>AI-driven workload orchestration</strong>, where <strong>intelligent schedulers optimize resource allocation across multiple cloud providers</strong> to achieve maximum performance at the lowest possible cost.
+            </p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section id="final-section" style="background-color: #121212; border: none;">
+        <div class="container">
+            <h2>Ready to Scale Up?</h2>
+            <p>Experience the power of NeuroNode’s cloud processing. Whether you’re training AI models, rendering high-quality visuals, or running complex computations, VPaaT provides the flexibility and power you need.</p>
+            <a href="investment.html" class="cta-button">Invest Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <h3>About NeuroNode</h3>
+            <p>NeuroNode is revolutionizing cloud development with AI, dynamic processing, and cutting-edge developer tools. Join the future of technology with us.</p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links" style="margin-left: 130px;">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="hallmarks.html">Features</a></li>
+              <li><a href="investment.html">Invest</a></li>
+              <li><a href="processing.html">Processing - VPaaT</a></li>
+              <li><a href="#comparison">Compare</a></li>
+              <li><a href="hallmarks.html#ai">Hestia - AI</a></li>
+              <li><a href="investment.html">Contact</a></li>
+            </ul>
+          </div>
+          
+          <!-- Contact Column -->
+          <div class="footer-column contact">
+            <h3>Contact Us</h3>
+            <p>Email: random@random.com</p>
+            <p>Phone: +1 (234) 567-8910</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 NeuroNode, All rights reserved.</p>
+        </div>
+      </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        function toggleMenu() {
+            document.querySelector(".sidebar").classList.toggle("active");
+        }
+        
+        function updateResource(type) {
+            let cpu = document.getElementById("cpu-slider").value;
+            let gpu = document.getElementById("gpu-slider").value;
+            let ram = document.getElementById("ram-slider").value;
+
+            document.getElementById("cpu-value").innerText = cpu;
+            document.getElementById("gpu-value").innerText = gpu;
+            document.getElementById("ram-value").innerText = ram;
+
+            let cost = (cpu * 0.05) + (gpu * 0.002) + (ram * 0.01);
+            document.getElementById("cost-estimate").innerText = cost.toFixed(2);
+        }
+
+        function toggleDeepDive() {
+            let content = document.querySelector(".vpaat-content");
+            let title = document.querySelector(".collapsible-title .caret");
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block"; // Show content
+                title.style.transform = "rotate(90deg)"; // Rotate caret
+            } else {
+                content.style.display = "none"; // Hide content
+                title.style.transform = "rotate(0deg)"; // Reset caret
+            }
+        }
+    </script>
+</body>
+</html>

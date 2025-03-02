@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroNode - Features</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/screen_detector.js') }}"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+      <div class="nav-container">
+        <a href="main.html"><div class="logo"><img src="logo.png" alt="NeuroNode"></div></a>
+        <ul class="nav-links">
+              <li><a href="/features">Features</a></li>
+              <li><a href="/investment">Invest</a></li>
+              <li><a href="/processing">Processing - VPaaT</a></li>
+              <li><a href="/#comparison" class="active">Compare</a></li>
+              <li><a href="https://neuronode-hestia.ai/">Hestia - AI</a></li>
+              <li><a href="/investment" id="regcta" class="cta-button">Request Demo</a></li>
+          </ul>
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+  </nav>
+
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+    <ul>
+      <li><a href="#market">Snippets Market</a></li>
+      <li><a href="#ai">AI Tools</a></li>
+      <li><a href="#vpaatf">Cloud Processing</a></li>
+      <li><a href="#dev-tools">Developer Tools</a></li>
+    </ul>
+  </div>
+
+  <section id="market" class="snippets-market">
+    <div class="content-wrapper">
+      <h2>Snippets Market</h2>
+      <!-- First Row: Display of Snippets Market UI -->
+      <div class="snippets-row">
+        <img src="static/images/main/featurec1.png" alt="Snippets Market UI" class="snippets-image">
+      </div>
+      <!-- Second Row: Snippets Dropdown + Description -->
+      <div class="snippets-row">
+        <img src="static/images/main/featurec12.png" alt="Snippets Dropdown UI" class="snippets-dropdown-image">
+        <div class="snippets-text">
+          <p>
+            The <strong>Snippets Market</strong> is a powerful tool designed to enhance development efficiency by allowing developers to <strong>store, manage, and quickly insert reusable code snippets</strong> into their projects.
+            Instead of rewriting commonly used functions, UI components, or algorithms, developers can simply save them in the Snippets Market and reuse them instantly.
+            This feature ensures consistency across projects while significantly reducing development time.
+          </p>
+          <p>
+            The <strong>Snippets Dropdown</strong> provides an easy way to access saved and favorited snippets directly within a project.
+            Developers can categorize and organize their snippets for better retrieval, making it simple to integrate pre-written code into new or existing projects.
+            Whether working on a team or as an individual, the ability to <strong>instantly pull up relevant snippets</strong> leads to a <strong>smoother and more efficient coding experience</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <section id="ai" class="ai-tools">
+    <div class="ai-wrapper">
+      <h2>AI Tools - <span style="color: #94ff6f; font-style: italic;">Hestia</span></h2>
+      <!-- AI Chat & Code Container -->
+      <div class="ai-container">
+        <!-- Left Side: AI Chat -->
+        <div class="ai-chat">
+          <div class="message-box user-message typing" id="userMessage">
+            <strong>User:</strong> <span class="text"></span>
+          </div>
+          <div class="message-box ai-response typing hidden" id="aiResponse">
+            <strong>Hestia:</strong> <span class="text"></span>
+          </div>
+        </div>
+        <!-- Right Side: AI-Generated Code -->
+        <div class="ai-code">
+          <pre id="codeBlock" class="code-highlight"></pre>
+        </div>
+      </div>
+      <!-- AI Tools Description -->
+      <div class="ai-text">
+        <p>
+          <span style="color: #94ff6f; font-style: italic;">Hestia</span>, the AI-powered development assistant, helps developers with <strong>intelligent code generation, debugging suggestions, and automated optimizations</strong>. Instead of manually searching for solutions, <span style="color: #94ff6f; font-style: italic;">Hestia</span> generates well-structured, optimized code snippets based on natural language prompts.
+        </p>
+        <p>
+          Seamlessly integrating into the development workflow, <span style="color: #94ff6f; font-style: italic;">Hestia</span> <strong>analyzes patterns, detects inefficiencies, and offers real-time improvements</strong>. By automating repetitive tasks and suggesting best practices, it allows developers to focus on building <strong>innovative solutions more efficiently</strong>.
+        </p>
+        <p>
+          <span style="color: #94ff6f; font-style: italic;">Hestia</span> streamlines coding by generating, debugging, and optimizing code in real time. It processes user input using structured tags like <strong>&lt;chat&gt;</strong> for explanations, <strong>&lt;edit&gt;</strong> for precise code modifications, and <strong>&lt;shell&gt;</strong> for command-line operations. Instead of manually searching for solutions, developers can describe what they need, and <span style="color: #94ff6f; font-style: italic;">Hestia</span> provides structured, efficient responses. Integrated into the workflow, it <strong>detects inefficiencies, automates repetitive tasks, and recommends best practices</strong>, enabling developers to create solutions faster.
+        </p>
+      </div>
+
+      <!-- Three Boxes with Typing Animations -->
+      <div class="three-box-container">
+        <!-- Chat Box -->
+        <div class="box chat-box">
+          <h3>Chat</h3>
+          <div class="message-box">
+            <strong>User:</strong>
+          </div>
+          <div class="message-box">
+            <strong>Hestia:</strong><span class="shell-tag"></span>
+          </div>
+        </div>
+        <!-- AI Cmd Box -->
+        <div class="box ai-cmd-box">
+          <h3>AI Terminal<small style="font-size: 15px; color: #5f5f5f; margin-left: 7px;"><br>(Seperate)</small></h3>
+          <br><pre class="code-highlight"></pre>
+        </div>
+        <!-- User Cmd Box -->
+        <div class="box user-cmd-box">
+          <h3>User Terminal</h3>
+          <pre class="code-highlight"></pre>
+        </div>
+      </div>
+      <a href="hallmarks.html#ai"><button class="btn" style="font-family: 'Poppins', sans-serif; margin-top: 40px;">Explore NeuroNode's AI</button></a>
+      <a href="commands.html" class="btn secondary" style="margin-left: 15px;">See all of <span style="font-weight: bold;">Hestia's</span> Commands</a>
+    </div>
+  </section>
+    
+  <!-- VPaaT Section -->
+  <section id="vpaatf">
+    <!-- Top: Slider for Random GPU -->
+    <h2>VPaaT</h2>
+
+    <!-- Middle: Two side-by-side boxes -->
+    <div class="vpaat-middle">
+      <!-- Left Box: GPU Details with two sliders -->
+      <div class="vpaat-left">
+        <h3>
+          QuantumX Z200 <code>quantumX_Z200</code>
+        </h3>
+        <div class="slider-group">
+          <label for="gpu-ram">GPU RAM (<span id="gpu-ram-value">0 GB</span>)</label>
+          <input type="range" id="gpu-ram" min="0" max="6" value="0" oninput="updateGPUValue('gpu-ram')">
+        </div>
+        <div class="slider-group">
+          <label for="gpu-cores">GPU Cores (<span id="gpu-cores-value">0</span>)</label>
+          <input type="range" id="gpu-cores" min="0" max="21,760" value="0" oninput="updateGPUValue('gpu-cores')">
+        </div>
+      </div>
+
+      <!-- Right Box: VPaaT Usage Example -->
+      <div class="vpaat-right">
+        <h3>VPaaT Usage Example</h3>
+        <pre class="code-snippet">
+  <span class="comment"># Example usage of VPaaT</span>
+  processor = quantumX_Z200
+  processor.run(
+      task="simulate_render",
+      workload={
+          "gpu_ram": processor.ram.max,
+          "gpu_cores": processor.cores.max,
+          "settings": {
+              "resolution": "8K",
+              "anti_aliasing": True,
+              "ray_tracing": "enabled"
+          },
+          "iterations": 5000
+      }
+  )
+        </pre>
+      </div>
+    </div>
+
+    <!-- Bottom: Full Explanation of VPaaT -->
+    <div class="vpaat-bottom">
+      <h3>About VPaaT</h3>
+      <p>
+        Virtual Processing as a Tool (VPaaT) is at the heart of NeuroNode’s innovative approach to cloud computing. It redefines how developers interact with computing resources by turning resource allocation into a simple, code-driven operation. With VPaaT, scaling up or down becomes as intuitive as adjusting a slider or declaring a variable – eliminating the need for manual provisioning and complex configurations.
+      </p>
+      <p>
+        Traditional cloud platforms often entangle developers in convoluted resource management, resulting in over-provisioning and wasted capacity. VPaaT streamlines this process by automating resource allocation based on real-time demand. Its pay-as-you-go model ensures that you only pay for the computing power you actually use, dramatically reducing costs while boosting efficiency for tasks like AI training, game development, and high-performance computing.
+      </p>
+      <p>
+        Beyond simplifying hardware management, VPaaT integrates seamlessly with NeuroNode’s suite of developer tools. The platform offers real-time code optimization, AI-driven debugging, and a vibrant marketplace for reusable code snippets, transforming cloud computing from a cumbersome overhead into a powerful, developer-friendly asset.
+      </p>
+      <p>
+        By harnessing VPaaT, NeuroNode empowers you to focus on creativity and functionality rather than infrastructure management. This future-proof solution streamlines workflows and scales effortlessly with your growing needs, setting a new benchmark in cloud computing excellence.
+      </p>
+    </div>
+
+    <a href="processing.html" id="procs" class="btn" style="margin-left: 270px; margin-bottom: 50px;">Explore Processing</a>
+  </section>
+
+  <script>
+  function updateTopSlider() {
+    var topSlider = document.getElementById("top-slider");
+    var topValue = topSlider.value;
+    document.getElementById("top-slider-value").innerText = topValue;
+    // Update GPU RAM and GPU Cores sliders to have a maximum of the top slider value
+    document.getElementById("gpu-ram").max = topValue;
+    document.getElementById("gpu-cores").max = topValue;
+    
+    // Adjust GPU RAM if it exceeds new maximum
+    var gpuRamSlider = document.getElementById("gpu-ram");
+    if (parseInt(gpuRamSlider.value) > topValue) {
+      gpuRamSlider.value = topValue;
+      document.getElementById("gpu-ram-value").innerText = topValue + " GB";
+    }
+    // Adjust GPU Cores if it exceeds new maximum
+    var gpuCoresSlider = document.getElementById("gpu-cores");
+    if (parseInt(gpuCoresSlider.value) > topValue) {
+      gpuCoresSlider.value = topValue;
+      document.getElementById("gpu-cores-value").innerText = topValue;
+    }
+  }
+
+  function updateGPUValue(id) {
+    var slider = document.getElementById(id);
+    if (id === "gpu-ram") {
+      document.getElementById("gpu-ram-value").innerText = slider.value + " GB";
+    } else {
+      document.getElementById("gpu-cores-value").innerText = slider.value;
+    }
+  }
+  </script>
+    
+  <!-- Dev Tools Section -->
+  <section id="dev-tools">
+    <div class="container">
+      <h2>Dev Tools</h2>
+      <p>
+        The Dev Tools section provides an integrated environment that centralizes all essential development functions into one unified interface. With live previews, real-time output logs, debugging, version control, AI assistance, and more, you can write, test, and troubleshoot your code without switching between different applications. This streamlined setup minimizes context switching and empowers you to focus on building great software.
+      </p>
+      <p>
+        Our comprehensive suite of tools ensures that every aspect of your development process is covered—from code editing and testing to deployment and maintenance. Whether you’re debugging a complex issue or managing dependencies, these tools are designed to make your workflow smoother and more efficient.
+      </p>
+      <p>
+        By integrating everything into a single interface, the Dev Tools eliminate the need for multiple applications and endless window switching, allowing you to keep your focus on the creative and technical challenges that truly matter.
+      </p>
+    </div>
+  </section>
+
+  <!-- Final Section / Call to Action -->
+  <section id="final-section">
+    <div class="container">
+      <h2>Join the Future of Cloud Computing</h2>
+      <p>
+        Experience the unparalleled efficiency and innovation of NeuroNode, where cutting-edge technology meets a developer-first approach. Our platform revolutionizes cloud computing with seamless resource allocation, AI-driven tools, and an intuitive interface designed for modern creators.
+      </p>
+      <p>
+        Invest in the future today and become part of the next wave of digital transformation. With NeuroNode, you're not just adopting a service—you're joining a movement that puts creativity, efficiency, and performance at the forefront.
+      </p>
+      <a href="investment.html" id="bti">Invest Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <!-- About Column -->
+      <div class="footer-column about">
+        <h3>About NeuroNode</h3>
+        <p>NeuroNode is revolutionizing cloud development with AI, dynamic processing, and cutting-edge developer tools. Join the future of technology with us.</p>
+      </div>
+      <!-- Quick Links Column -->
+      <div class="footer-column links" style="margin-left: 130px;">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="hallmarks.html">Features</a></li>
+          <li><a href="investment.html">Invest</a></li>
+          <li><a href="processing.html">Processing - VPaaT</a></li>
+          <li><a href="#comparison">Compare</a></li>
+          <li><a href="hallmarks.html#ai">Hestia - AI</a></li>
+          <li><a href="investment.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Column -->
+      <div class="footer-column contact">
+        <h3>Contact Us</h3>
+        <p>Email: random@random.com</p>
+        <p>Phone: +1 (234) 567-8910</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NeuroNode, All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".sidebar").classList.toggle("active");
+    }
+
+    function adjustSecondaryNav() {
+      const navbar = document.querySelector("nav");
+      const secondaryNav = document.querySelector(".secondary-nav");
+      if (navbar && secondaryNav) {
+        let navbarHeight = navbar.offsetHeight;
+        secondaryNav.style.top = `${navbarHeight}px`;
+      }
+    }
+
+    window.addEventListener("load", adjustSecondaryNav);
+    window.addEventListener("resize", adjustSecondaryNav);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const examples = [
+        {
+          user: "Write a Python script to find prime numbers up to a limit.",
+          ai: "Sure! Here's a Python script to find prime numbers up to a given limit.",
+          code: [
+            "<span class='code-keyword'>def</span> find_primes(limit):",
+            "    primes = []",
+            "    <span class='code-keyword'>for</span> num <span class='code-keyword'>in</span> range(2, limit + 1):",
+            "        is_prime = <span class='code-boolean'>True</span>",
+            "        <span class='code-keyword'>for</span> i <span class='code-keyword'>in</span> range(2, int(num ** 0.5) + 1):",
+            "            <span class='code-keyword'>if</span> num % i == 0:",
+            "                is_prime = <span class='code-boolean'>False</span>",
+            "                <span class='code-keyword'>break</span>",
+            "        <span class='code-keyword'>if</span> is_prime:",
+            "            primes.append(num)",
+            "    <span class='code-keyword'>return</span> primes",
+            "",
+            "limit = 50",
+            "<span class='code-function'>print</span>(find_primes(limit))"
+          ]
+        },
+        {
+          user: "Write a Python function to calculate Fibonacci numbers.",
+          ai: "Of course! Here's a Python function to generate Fibonacci numbers up to a limit.",
+          code: [
+            "<span class='code-keyword'>def</span> fibonacci(limit):",
+            "    sequence = [0, 1]",
+            "    <span class='code-keyword'>while</span> sequence[-1] + sequence[-2] < limit:",
+            "        sequence.append(sequence[-1] + sequence[-2])",
+            "    <span class='code-keyword'>return</span> sequence",
+            "",
+            "limit = 100",
+            "<span class='code-function'>print</span>(fibonacci(limit))"
+          ]
+        },
+        {
+          user: "Write a Python script to check if a number is a palindrome.",
+          ai: "Here's a Python function that checks if a given number is a palindrome.",
+          code: [
+            "<span class='code-keyword'>def</span> is_palindrome(n):",
+            "    <span class='code-keyword'>return</span> <span class='code-function'>str</span>(n) == <span class='code-function'>str</span>(n)[::-1]",
+            "",
+            "num = 121",
+            "<span class='code-function'>print</span>(is_palindrome(num))"
+          ]
+        },
+        {
+          user: "Generate a Python script that reverses a string.",
+          ai: "Here's a simple Python function to reverse a string.",
+          code: [
+            "<span class='code-keyword'>def</span> reverse_string(s):",
+            "    <span class='code-keyword'>return</span> s[::-1]",
+            "",
+            "text = 'hello'",
+            "<span class='code-function'>print</span>(reverse_string(text))"
+          ]
+        },
+        {
+          user: "Write a Python function to find the factorial of a number.",
+          ai: "Here's a Python function to calculate the factorial of a number.",
+          code: [
+            "<span class='code-keyword'>def</span> factorial(n):",
+            "    <span class='code-keyword'>if</span> n == 0 <span class='code-keyword'>or</span> n == 1:",
+            "        <span class='code-keyword'>return</span> 1",
+            "    <span class='code-keyword'>return</span> n * factorial(n - 1)",
+            "",
+            "num = 5",
+            "<span class='code-function'>print</span>(factorial(num))"
+          ]
+        }
+      ];
+
+      let currentExampleIndex = 0;
+      const userSpan = document.querySelector("#userMessage .text");
+      const aiSpan = document.querySelector("#aiResponse .text");
+      const aiResponseBlock = document.querySelector("#aiResponse");
+      const codeBlock = document.querySelector("#codeBlock");
+
+      function typeText(element, text, speed, callback) {
+        let index = 0;
+        function type() {
+          if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+          } else if (callback) {
+            setTimeout(callback, 500);
+          }
+        }
+        type();
+      }
+
+      function revealCode(codeLines) {
+        codeBlock.innerHTML = "";
+        let index = 0;
+        function typeCode() {
+          if (index < codeLines.length) {
+            codeBlock.innerHTML += `<span class="line-number">${index + 1}</span> ${codeLines[index]}<br>`;
+            index++;
+            setTimeout(typeCode, 100);
+          }
+        }
+        typeCode();
+      }
+
+      function runExample() {
+        const example = examples[currentExampleIndex];
+        userSpan.innerHTML = "";
+        aiSpan.innerHTML = "";
+        codeBlock.innerHTML = "";
+        aiResponseBlock.classList.add("hidden");
+
+        typeText(userSpan, example.user, 50, function () {
+          aiResponseBlock.classList.remove("hidden");
+          typeText(aiSpan, example.ai, 50, function () {
+            revealCode(example.code);
+          });
+        });
+
+        currentExampleIndex = (currentExampleIndex + 1) % examples.length;
+      }
+
+      runExample();
+      setInterval(runExample, 14000);
+
+      // New function to animate the three boxes (Chat, AI Terminal, User Terminal)
+      function animateThreeBoxes() {
+        // Chat Box Animation
+        const chatBox = document.querySelector('.box.chat-box');
+        const messageBoxes = chatBox.querySelectorAll('.message-box');
+        
+        // User message in Chat Box
+        let userMsgBox = messageBoxes[0];
+        const userLabel = userMsgBox.querySelector('strong').outerHTML;
+        userMsgBox.innerHTML = userLabel + ' <span class="typing-text"></span>';
+        const userTypingSpan = userMsgBox.querySelector('.typing-text');
+        const userChatText = "Install PyTorch";
+        
+        // AI message in Chat Box
+        let aiMsgBox = messageBoxes[1];
+        const aiLabel = aiMsgBox.querySelector('strong').outerHTML;
+        aiMsgBox.innerHTML = aiLabel + ' <span class="typing-text"></span>';
+        const aiTypingSpan = aiMsgBox.querySelector('.typing-text');
+        const aiChatText = "Of course. I have downloaded PyTorch. ";
+        
+        // AI Terminal Box Animation
+        const aiCmdBox = document.querySelector('.box.ai-cmd-box pre');
+        aiCmdBox.innerHTML = "";
+        const aiTerminalText = "pip install torch";
+        
+        // User Terminal Box Animation (more believable message)
+        const userCmdBox = document.querySelector('.box.user-cmd-box pre');
+        userCmdBox.innerHTML = "";
+        const userTerminalText = "Downloading PyTorch package... \n\nverifying dependencies... \n\ninstallation complete.";
+        
+        // Animate in sequence
+        typeText(userTypingSpan, userChatText, 50, function() {
+          typeText(aiTypingSpan, aiChatText, 50, function() {
+            // Append the shell-tag after AI message is typed
+            const shellTag = document.createElement('span');
+            shellTag.className = "shell-tag";
+            shellTag.innerHTML = "&lt;shell&gt; pip install torch &lt;/shell&gt;";
+            aiMsgBox.appendChild(shellTag);
+            
+            // Animate AI Terminal command
+            typeText(aiCmdBox, aiTerminalText, 50, function() {
+              // Animate User Terminal download message
+              typeText(userCmdBox, userTerminalText, 50);
+            });
+          });
+        });
+      }
+
+      // Trigger the three boxes animation after a short delay
+      setTimeout(animateThreeBoxes, 2000);
+      setInterval(animateThreeBoxes, 16500);
+    });
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        location.reload(); // yay, reloading like magic, mashallah!
+      }
+    });
+  </script>
+  <script>
+      if (window.innerWidth <= 768) {
+          document.body.innerHTML = "<h2 style='text-align:center; padding: 20px;'>Sorry, this page is not available for phones. Please open this page on a computer.</h2>";
+      }
+  </script>
+</body>
+</html>

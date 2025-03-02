@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Commands - NeuroNode</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="static/css/commands.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <a href="main.html"><div class="logo"><img src="logo.png" alt="NeuroNode"></div></a>
+            <ul class="nav-links">
+                <li><a href="/features">Features</a></li>
+                <li><a href="/investment">Invest</a></li>
+                <li><a href="/processing">Processing - VPaaT</a></li>
+                <li><a href="/#comparison" class="active">Compare</a></li>
+                <li><a href="https://neuronode-hestia.ai/">Hestia - AI</a></li>
+                <li><a href="/investment" id="regcta" class="cta-button">Request Demo</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a command..." onkeyup="filterCommands()">
+    </div>
+
+    <section class="commands-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="commandTable">
+                <!-- File & Project Management -->
+                <tr><td><code>&lt;file_open&gt;</code></td><td>Open a file</td></tr>
+                <tr><td><code>&lt;file_create&gt;</code></td><td>Create a new file</td></tr>
+                <tr><td><code>&lt;file_save&gt;</code></td><td>Save the current file</td></tr>
+                <tr><td><code>&lt;file_save_as&gt;</code></td><td>Save file with a new name</td></tr>
+                <tr><td><code>&lt;file_close&gt;</code></td><td>Close the current file</td></tr>
+                <tr><td><code>&lt;file_delete&gt;</code></td><td>Delete a file</td></tr>
+                <tr><td><code>&lt;file_rename&gt;</code></td><td>Rename a file</td></tr>
+                <tr><td><code>&lt;file_duplicate&gt;</code></td><td>Duplicate a file</td></tr>
+                <tr><td><code>&lt;file_move&gt;</code></td><td>Move a file to another location</td></tr>
+                <tr><td><code>&lt;directory_create&gt;</code></td><td>Create a new directory</td></tr>
+                <tr><td><code>&lt;directory_delete&gt;</code></td><td>Delete a directory</td></tr>
+                <tr><td><code>&lt;directory_rename&gt;</code></td><td>Rename a directory</td></tr>
+                <tr><td><code>&lt;project_create&gt;</code></td><td>Create a new project</td></tr>
+                <tr><td><code>&lt;project_open&gt;</code></td><td>Open an existing project</td></tr>
+                <tr><td><code>&lt;project_close&gt;</code></td><td>Close the current project</td></tr>
+                <tr><td><code>&lt;project_clone&gt;</code></td><td>Clone a remote repository</td></tr>
+    
+                <!-- Code Editing & Manipulation -->
+                <tr><td><code>&lt;edit&gt;</code></td><td>Edit existing code</td></tr>
+                <tr><td><code>&lt;insert_code&gt;</code></td><td>Insert new code</td></tr>
+                <tr><td><code>&lt;delete_code&gt;</code></td><td>Remove lines of code</td></tr>
+                <tr><td><code>&lt;replace_code&gt;</code></td><td>Replace existing code</td></tr>
+                <tr><td><code>&lt;format_code&gt;</code></td><td>Auto-format code for readability</td></tr>
+                <tr><td><code>&lt;comment_code&gt;</code></td><td>Add or remove comments</td></tr>
+                <tr><td><code>&lt;auto_indent&gt;</code></td><td>Adjust indentation automatically</td></tr>
+                <tr><td><code>&lt;fix_syntax&gt;</code></td><td>Fix syntax errors</td></tr>
+    
+                <!-- Terminal & Command Execution -->
+                <tr><td><code>&lt;terminal_open&gt;</code></td><td>Open an integrated terminal</td></tr>
+                <tr><td><code>&lt;terminal_close&gt;</code></td><td>Close the terminal</td></tr>
+                <tr><td><code>&lt;shell&gt;</code></td><td>Execute a shell command</td></tr>
+                <tr><td><code>&lt;shell_kill&gt;</code></td><td>Kill a running shell process</td></tr>
+    
+                <!-- Debugging & Execution -->
+                <tr><td><code>&lt;debug_start&gt;</code></td><td>Start debugging</td></tr>
+                <tr><td><code>&lt;debug_stop&gt;</code></td><td>Stop debugging</td></tr>
+                <tr><td><code>&lt;debug_restart&gt;</code></td><td>Restart the debugger</td></tr>
+                <tr><td><code>&lt;debug_breakpoint_set&gt;</code></td><td>Set a breakpoint</td></tr>
+                <tr><td><code>&lt;debug_step&gt;</code></td><td>Step through code line by line</td></tr>
+    
+                <!-- Problems, Errors & Linting -->
+                <tr><td><code>&lt;problem_list&gt;</code></td><td>Show all errors and warnings</td></tr>
+                <tr><td><code>&lt;problem_fix&gt;</code></td><td>Fix an identified problem</td></tr>
+                <tr><td><code>&lt;linter_run&gt;</code></td><td>Run a linter for code analysis</td></tr>
+    
+                <!-- Search & Navigation -->
+                <tr><td><code>&lt;search&gt;</code></td><td>Search for text in the current file</td></tr>
+                <tr><td><code>&lt;goto_line&gt;</code></td><td>Jump to a specific line</td></tr>
+    
+                <!-- Version Control & Git -->
+                <tr><td><code>&lt;git_commit&gt;</code></td><td>Commit changes</td></tr>
+                <tr><td><code>&lt;git_push&gt;</code></td><td>Push changes to a remote repository</td></tr>
+                <tr><td><code>&lt;git_pull&gt;</code></td><td>Pull changes from a remote repository</td></tr>
+    
+                <!-- Extensions & Plugins -->
+                <tr><td><code>&lt;extension_install&gt;</code></td><td>Install a new extension</td></tr>
+                <tr><td><code>&lt;extension_remove&gt;</code></td><td>Remove an extension</td></tr>
+    
+                <!-- AI & Automation Features -->
+                <tr><td><code>&lt;ai_autocomplete_enable&gt;</code></td><td>Enable AI-powered autocompletion</td></tr>
+                <tr><td><code>&lt;ai_suggest_fix&gt;</code></td><td>Provide AI-based code suggestions</td></tr>
+                <tr><td><code>&lt;ai_explain_code&gt;</code></td><td>Explain a piece of code in natural language</td></tr>
+    
+                <!-- Build & Deployment Pipelines -->
+                <tr><td><code>&lt;build_project&gt;</code></td><td>Build the project</td></tr>
+                <tr><td><code>&lt;deploy&gt;</code></td><td>Deploy the project</td></tr>
+    
+                <!-- Chat System -->
+                <tr><td><code>&lt;chat_start&gt;</code></td><td>Start a chat session</td></tr>
+                <tr><td><code>&lt;chat_stop&gt;</code></td><td>End a chat session</td></tr>
+            </tbody>
+        </table>
+    </section>    
+
+    <footer>
+        <div class="footer-container">
+          <!-- About Column -->
+          <div class="footer-column about">
+            <h3>About NeuroNode</h3>
+            <p>NeuroNode is revolutionizing cloud development with AI, dynamic processing, and cutting-edge developer tools. Join the future of technology with us.</p>
+          </div>
+          <!-- Quick Links Column -->
+          <div class="footer-column links" style="margin-left: 130px;">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="hallmarks.html">Features</a></li>
+              <li><a href="investment.html">Invest</a></li>
+              <li><a href="processing.html">Processing - VPaaT</a></li>
+              <li><a href="#comparison">Compare</a></li>
+              <li><a href="hallmarks.html#ai">Hestia - AI</a></li>
+              <li><a href="investment.html">Contact</a></li>
+            </ul>
+          </div>
+          
+          <!-- Contact Column -->
+          <div class="footer-column contact">
+            <h3>Contact Us</h3>
+            <p>Email: random@random.com</p>
+            <p>Phone: +1 (234) 567-8910</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 NeuroNode, All rights reserved.</p>
+        </div>
+      </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.querySelector(".sidebar").classList.toggle("active");
+        }
+
+        function filterCommands() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("commandTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+<style>
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #c0ff72;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 110px;
+}
+
+.commands-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    border-radius: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background: #c0ff72;
+    color: #121212;
+}
+
+td code {
+    background: #2a2a2a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #2a2a2a;
+}
+</style>
+</body>
+</html>
